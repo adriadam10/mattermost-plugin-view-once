@@ -1,0 +1,30 @@
+{
+    "id": "com.github.adriadam10.view-once",
+    "name": "View Once",
+    "description": "WhatsApp-style view-once messages: text and any files that each recipient can open only once.",
+    "homepage_url": "https://github.com/adriadam10/mattermost-plugin-view-once",
+    "support_url": "https://github.com/adriadam10/mattermost-plugin-view-once/issues",
+    "version": "0.1.0",
+    "min_server_version": "12.0.0",
+    "server": {
+        "executables": {
+            "linux-amd64": "server/dist/plugin-linux-amd64",
+            "linux-arm64": "server/dist/plugin-linux-arm64"
+        }
+    },
+    "webapp": {
+        "bundle_path": "webapp/dist/main.js"
+    },
+    "settings_schema": {
+        "header": "View-once messages are deleted for good once every member of the conversation has opened and closed them, or after the time below.",
+        "settings": [
+            {
+                "key": "MaxLifetimeDays",
+                "display_name": "Maximum lifetime (days)",
+                "type": "number",
+                "default": 7,
+                "help_text": "A view-once message is deleted after this many days even if not everybody has opened it (1 to 30)."
+            }
+        ]
+    }
+}
